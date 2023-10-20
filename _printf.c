@@ -36,23 +36,7 @@ int _printf(const char *format, ...)
 				i++;
 
 			}
-			else if(*format == 'c')
-			{
-				char c = va_arg(int_char, int);
-				_putchaar(1, &c, 1);
-				i++;
-			}
-			else if (*format == 's')
-			{
-				char *str = va_arg(int_char, char*)
-				int str_len = 0;
-				
-				while (str[str_len] != '\0')
-					str_len++;
-				
-				_putts(1, str, str_len);
-				i += str_len;
-			}
+			
 		}
 
 		format++;
