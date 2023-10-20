@@ -33,14 +33,14 @@ int _printf(const char *format, ...)
 			if (*format == '%')
 			{
 			_putchaar(1, format, 1);
-				int_char++;
+				i++;
 
 			}
 			else if(*format == 'c')
 			{
 				char c = va_arg(int_char, int);
 				_putchaar(1, &c, 1);
-				int_char++;
+				i++;
 			}
 			else if (*format == 's')
 			{
@@ -51,11 +51,14 @@ int _printf(const char *format, ...)
 					str_len++;
 				
 				_putts(1, str, str_len);
-				int_char += str_len;
+				i += str_len;
 			}
 		}
+
 		format++;
 	}
-	va_end(format);
-	return (int_char);
+
+	va_end(int_char);
+
+	return i;
 }
